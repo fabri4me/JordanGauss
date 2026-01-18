@@ -1,0 +1,8 @@
+{
+  "name": "jordan OFICIAL 2/2026",
+  "description": "Una plataforma educativa de vanguardia que une las matemáticas avanzadas con la inteligencia artificial para formar a los líderes tecnológicos del futuro.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}

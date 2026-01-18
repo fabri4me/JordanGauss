@@ -6,13 +6,13 @@ const Footer: React.FC = () => {
   const whatsappUrl = "https://wa.me/message/IMR4LQ7W66N2I1";
 
   return (
-    <footer className="bg-slate-950 pt-32 pb-12 border-t border-slate-900">
-      <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-20 mb-24">
-          <div className="space-y-10">
-            <Logo size={64} />
-            <div className="space-y-4">
-              <p className="text-slate-500 text-base leading-relaxed max-w-xs">
+    <footer className="bg-slate-950 pt-16 sm:pt-24 md:pt-32 pb-8 sm:pb-12 border-t border-slate-900">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12 md:gap-16 lg:gap-20 mb-16 sm:mb-24">
+          <div className="space-y-6 sm:space-y-10">
+            <Logo size={48} />
+            <div className="space-y-2 sm:space-y-4">
+              <p className="text-slate-500 text-sm sm:text-base leading-relaxed max-w-xs">
                 Potenciando mentes neurodiversas desde Bolivia para el mundo.
               </p>
               <div className="text-slate-400 font-bold text-xs uppercase tracking-widest">
@@ -65,8 +65,8 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        <div className="pt-12 border-t border-slate-900/50 flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
-          <p className="text-slate-600 text-[10px] font-black uppercase tracking-[0.3em]">
+        <div className="pt-12 border-t border-slate-900/50 flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
+          <p className="text-slate-600 text-[9px] sm:text-[10px] font-black uppercase tracking-[0.3em]">
             © 2024 Jordan Gauss Academy. Inteligencia en todas sus formas.
           </p>
           <div className="flex items-center space-x-2 text-[10px] font-black uppercase tracking-widest">

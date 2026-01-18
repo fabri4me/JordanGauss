@@ -50,12 +50,12 @@ const GeminiAdvisor: React.FC = () => {
   }, [recommendation]);
 
   return (
-    <section className="py-32 container mx-auto px-6">
-      <div className="relative glass border-white/5 rounded-[4rem] p-10 md:p-20 overflow-hidden shadow-2xl group">
-        <div className={`absolute -top-24 -right-24 w-96 h-96 rounded-full blur-[120px] transition-all duration-1000 ${loading ? 'bg-brand-blue/30 animate-pulse' : 'bg-brand-blue/5'}`}></div>
-        <div className={`absolute -bottom-24 -left-24 w-96 h-96 rounded-full blur-[120px] transition-all duration-1000 ${loading ? 'bg-brand-red/30 animate-pulse' : 'bg-brand-red/5'}`}></div>
+    <section className="py-16 sm:py-24 md:py-32 container mx-auto px-4 sm:px-6">
+      <div className="relative glass border-white/5 rounded-2xl sm:rounded-3xl md:rounded-[4rem] p-6 sm:p-8 md:p-16 lg:p-20 overflow-hidden shadow-2xl group">
+        <div className={`absolute -top-16 sm:-top-24 -right-16 sm:-right-24 w-48 sm:w-96 h-48 sm:h-96 rounded-full blur-[80px] sm:blur-[120px] transition-all duration-1000 ${loading ? 'bg-brand-blue/30 animate-pulse' : 'bg-brand-blue/5'}`}></div>
+        <div className={`absolute -bottom-16 sm:-bottom-24 -left-16 sm:-left-24 w-48 sm:w-96 h-48 sm:h-96 rounded-full blur-[80px] sm:blur-[120px] transition-all duration-1000 ${loading ? 'bg-brand-red/30 animate-pulse' : 'bg-brand-red/5'}`}></div>
         
-        <div className="max-w-4xl mx-auto text-center space-y-12 relative z-10">
+        <div className="max-w-4xl mx-auto text-center space-y-6 sm:space-y-10 md:space-y-12 relative z-10">
           <div className="flex justify-center">
              <div className="px-6 py-2 rounded-2xl bg-slate-950 border border-white/10 flex items-center space-x-3">
                 <div className="flex space-x-1">
@@ -68,29 +68,29 @@ const GeminiAdvisor: React.FC = () => {
              </div>
           </div>
 
-          <div className="space-y-6">
-            <h2 className="text-5xl md:text-7xl font-black tracking-tight leading-none text-white">
+          <div className="space-y-3 sm:space-y-6">
+            <h2 className="text-3xl sm:text-5xl md:text-7xl font-black tracking-tight leading-none text-white">
               ¿Cuál es tu <span className="text-brand-gradient">Duda Hoy?</span>
             </h2>
-            <p className="text-slate-400 text-xl md:text-2xl font-medium max-w-2xl mx-auto">
+            <p className="text-slate-400 text-base sm:text-lg md:text-xl lg:text-2xl font-medium max-w-2xl mx-auto">
               Nuestra IA está entrenada con la metodología de Juan Pablo para darte una respuesta inmediata sobre el potencial de tu hijo.
             </p>
           </div>
 
-          <div className="flex flex-wrap justify-center gap-3 max-w-3xl mx-auto">
+          <div className="flex flex-wrap justify-center gap-2 sm:gap-3 max-w-3xl mx-auto">
             {suggestions.map((s, idx) => (
               <button
                 key={idx}
                 onClick={() => handleAsk(s)}
                 disabled={loading}
-                className="px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-xs font-bold text-slate-400 hover:text-white hover:bg-brand-blue/20 hover:border-brand-blue/30 transition-all disabled:opacity-50"
+                className="px-3 sm:px-5 py-1.5 sm:py-2.5 rounded-full bg-white/5 border border-white/10 text-[10px] sm:text-xs font-bold text-slate-400 hover:text-white hover:bg-brand-blue/20 hover:border-brand-blue/30 transition-all disabled:opacity-50 line-clamp-1"
               >
                 {s}
               </button>
             ))}
           </div>
           
-          <div className="flex flex-col md:flex-row items-stretch space-y-5 md:space-y-0 md:space-x-5 max-w-3xl mx-auto">
+          <div className="flex flex-col sm:flex-row items-stretch space-y-3 sm:space-y-0 sm:space-x-3 max-w-3xl mx-auto">
             <div className="relative flex-1">
               <input 
                 type="text" 
@@ -98,14 +98,14 @@ const GeminiAdvisor: React.FC = () => {
                 onChange={(e) => setGoal(e.target.value)}
                 onKeyDown={(e) => e.key === 'Enter' && handleAsk()}
                 placeholder="Ej: Mi hijo tiene 8 años y se bloquea con las restas..."
-                className="w-full bg-white/5 border border-white/10 rounded-3xl px-10 py-6 text-white text-lg placeholder:text-slate-600 focus:outline-none focus:ring-4 focus:ring-brand-blue/20 focus:border-brand-blue transition-all disabled:opacity-50"
+                className="w-full bg-white/5 border border-white/10 rounded-2xl sm:rounded-3xl px-4 sm:px-8 lg:px-10 py-4 sm:py-5 lg:py-6 text-white text-sm sm:text-base lg:text-lg placeholder:text-slate-600 focus:outline-none focus:ring-4 focus:ring-brand-blue/20 focus:border-brand-blue transition-all disabled:opacity-50"
                 disabled={loading}
               />
             </div>
             <button 
               onClick={() => handleAsk()}
               disabled={loading || !goal.trim()}
-              className="px-12 py-6 bg-white text-slate-950 text-lg font-black rounded-3xl hover:bg-brand-blue hover:text-white transition-all transform hover:scale-105 active:scale-95 disabled:opacity-50 disabled:grayscale shadow-2xl"
+              className="px-6 sm:px-10 lg:px-12 py-4 sm:py-5 lg:py-6 bg-white text-slate-950 text-sm sm:text-base lg:text-lg font-black rounded-2xl sm:rounded-3xl hover:bg-brand-blue hover:text-white transition-all transform hover:scale-105 active:scale-95 disabled:opacity-50 disabled:grayscale shadow-2xl whitespace-nowrap"
             >
               {loading ? 'Analizando...' : 'Consultar'}
             </button>

@@ -22,21 +22,21 @@ const CourseCatalog: React.FC = () => {
 
   return (
     <section id="courses" className="py-32">
-      <div className="container mx-auto px-6">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 space-y-10 md:space-y-0">
-          <div className="space-y-4">
-            <h2 className="text-6xl md:text-8xl font-black tracking-tight leading-none">
-               Skills para <span className="text-brand-green underline decoration-8 underline-offset-8">Ganar.</span>
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 sm:mb-20 space-y-6 sm:space-y-10 md:space-y-0">
+          <div className="space-y-3 sm:space-y-4">
+            <h2 className="text-3xl sm:text-5xl md:text-7xl font-black tracking-tight leading-none">
+               Skills para <span className="text-brand-green underline decoration-4 sm:decoration-8 underline-offset-4 sm:underline-offset-8">Ganar.</span>
             </h2>
-            <p className="text-slate-400 text-xl md:text-2xl font-medium">Programas diseñados para la vida real, no para el pizarrón.</p>
+            <p className="text-slate-400 text-base sm:text-lg md:text-2xl font-medium">Programas diseñados para la vida real, no para el pizarrón.</p>
           </div>
           
-          <div className="flex bg-slate-900/50 p-2 rounded-3xl border border-white/5 shadow-2xl backdrop-blur-xl">
+          <div className="flex bg-slate-900/50 p-1.5 sm:p-2 rounded-2xl sm:rounded-3xl border border-white/5 shadow-2xl backdrop-blur-xl">
             {(['All', 'Math', 'AI'] as const).map((cat) => (
               <button
                 key={cat}
                 onClick={() => setFilter(cat)}
-                className={`px-10 py-4 rounded-2xl text-base font-black transition-all duration-300 ${
+                className={`px-4 sm:px-8 lg:px-10 py-2 sm:py-3 lg:py-4 rounded-xl sm:rounded-2xl text-xs sm:text-base font-black transition-all duration-300 ${
                   filter === cat 
                     ? 'bg-white text-slate-950 scale-105 shadow-xl' 
                     : 'text-slate-500 hover:text-white'
@@ -48,7 +48,7 @@ const CourseCatalog: React.FC = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-12">
           {filteredCourses.map((course) => (
             <div key={course.id} className="group flex flex-col bg-white/5 border border-white/10 rounded-[3rem] overflow-hidden hover:bg-white/[0.08] transition-all hover:translate-y-[-8px] hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.6)]">
               <a href={coursesUrl} target="_blank" rel="noopener noreferrer" className="block relative h-64 overflow-hidden">
